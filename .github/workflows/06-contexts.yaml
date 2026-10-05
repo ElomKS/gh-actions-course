@@ -10,15 +10,15 @@ on:
           default: false
 
 env:
-    MY_WORKFLOW_VAR: "This is a workflow variable"
-    MY_OVERWRITTEN_VAR: "This is an overwritten variable"
+    MY_WORKFLOW_VAR: "This is a workflow"
+    MY_OVERWRITTEN_VAR: "This is an overwritten workflow"
 
 jobs:
     echo-data:
         runs-on: ubuntu-latest
         env:
-            MY_JOB_VAR: "This is a job variable"
-            MY_OVERWRITTEN_VAR: "This is an overwritten variable"
+            MY_JOB_VAR: "This is a job "
+            MY_OVERWRITTEN_VAR: "This is an overwritten job"
         steps:
             - name: Display information
               run: |
@@ -37,8 +37,8 @@ jobs:
               env: 
                 MY_OVERWRITTEN_VAR: 'step'
               run: |
-                echo "Workflow Variable: ${{env.MY_WORKFLOW_VAR}}"
-                echo "Overwritten Variable: ${{env.MY_OVERWRITTEN_VAR}}"
+                echo "Workflow env: ${{env.MY_WORKFLOW_VAR}}"
+                echo "Overwritten env: ${{env.MY_OVERWRITTEN_VAR}}"
             - name: Print Environment Variables
               run: |
                 echo "Workflow env: ${{env.MY_WORKFLOW_VAR}}"
